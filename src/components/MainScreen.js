@@ -91,14 +91,6 @@ export default function MainScreen({
   useEffect(() => {
     recordWebcam.open();
     init_hands();
-
-    navigator.getUserMedia(
-      { audio: true, video: true },
-      (stream) => {
-        stream.getTracks().forEach((x) => x.stop());
-      },
-      (err) => console.log(err)
-    );
   }, []);
 
   // Component update
