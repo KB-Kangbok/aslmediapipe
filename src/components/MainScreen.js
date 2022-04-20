@@ -76,14 +76,12 @@ export default function MainScreen({
       recordWebcam.webcamRef.current !== null
     ) {
       recordWebcam.webcamRef.current.crossOrigin = "anonymous";
-
-      console.log(recordWebcam.webcamRef.current);
       const camera = new Camera.Camera(recordWebcam.webcamRef.current.video, {
         onFrame: async () => {
           await hands.send({ image: recordWebcam.webcamRef.current.video });
         },
-        width: 1280,
-        height: 720,
+        width: 640,
+        height: 480,
       });
       camera.start();
     }
@@ -122,10 +120,17 @@ export default function MainScreen({
         />
         <div
           className="canvas-cta"
-          hidden={
-            recordWebcam.status !== CAMERA_STATUS.OPEN &&
-            recordWebcam.status !== CAMERA_STATUS.RECORDING
-          }
+          style={{
+            display:
+              recordWebcam.status !== CAMERA_STATUS.OPEN &&
+              recordWebcam.status !== CAMERA_STATUS.RECORDING
+                ? "none"
+                : "flex",
+          }}
+          // hidden={
+          //   recordWebcam.status !== CAMERA_STATUS.OPEN &&
+          //   recordWebcam.status !== CAMERA_STATUS.RECORDING
+          // }
         >
           <canvas ref={canvasRef} />
           <div
