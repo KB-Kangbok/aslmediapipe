@@ -127,10 +127,6 @@ export default function MainScreen({
                 ? "none"
                 : "flex",
           }}
-          // hidden={
-          //   recordWebcam.status !== CAMERA_STATUS.OPEN &&
-          //   recordWebcam.status !== CAMERA_STATUS.RECORDING
-          // }
         >
           <canvas ref={canvasRef} />
           <div
