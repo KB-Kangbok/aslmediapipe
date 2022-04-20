@@ -24,13 +24,17 @@
   width: 80%;
   height: auto;
 }
-
 .canvas-cta {
   position: relative;
-  width: 90%;
-  height: 90%;
+  width: 70%;
+  height: 80%;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.screen-wrapper .canvas-cta canvas {
+  width: 100%;
+  height: auto;
 }
 
 .circle {
@@ -38,8 +42,8 @@
   width: 2em;
   height: 2em;
   position: absolute;
-  top: 7em;
-  left: 12%;
+  top: 1em;
+  left: 1em;
   z-index: 10;
   background-color: red;
   border-radius: 50%;
@@ -53,10 +57,14 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .screen-wrapper video,
-  .screen-wrapper canvas {
+  .screen-wrapper video {
     width: auto;
     height: 90%;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .canvas-cta {
+    width: 570px;
   }
 }
 @media only screen and (min-width: 1080px) {

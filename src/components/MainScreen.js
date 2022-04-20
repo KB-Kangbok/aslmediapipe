@@ -80,8 +80,6 @@ export default function MainScreen({
         onFrame: async () => {
           await hands.send({ image: recordWebcam.webcamRef.current.video });
         },
-        width: 640,
-        height: 480,
       });
       camera.start();
     }
